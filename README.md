@@ -37,6 +37,6 @@ Otherwise you will need to set environment variables before running `example.py`
     export VERACODE_API_KEY_SECRET=<YOUR_API_KEY_SECRET>
     python generate_sbom.py -a <your app name>
 
-Both of these methods will generate a CycloneDX SBOM in a file called <your app name>_sbom.json
+Both of these methods will generate a CycloneDX SBOM in a file called "your app name"_sbom.json
 
 If the app is not found an error message will be printed.
