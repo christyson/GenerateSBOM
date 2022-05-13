@@ -1,6 +1,7 @@
 import sys
 import requests
 import argparse
+import json
 from veracode_api_signing.plugin_requests import RequestsAuthPluginVeracodeHMAC
 from veracode_api_py import VeracodeAPI as vapi
 api_target = "https://analysiscenter.veracode.com/api/5.0/deletebuild.do"
@@ -25,7 +26,7 @@ def main():
            app_name=args.app+"_sbom.json"
            print("SBOM for App: "+args.app +" is saved to "+app_name)
            with open(app_name, 'w') as f:
-              print(str(sbom), file=f)
+              print(json.dumps(sbom), file=f)
     if (not found):
        print ('App: '+args.app+' does not exist')
     exit(0)
