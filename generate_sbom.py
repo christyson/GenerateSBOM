@@ -49,6 +49,8 @@ def main():
               print(json.dumps(sbom), file=f)
     if (not found):
        print ('App: '+args.app+' does not exist')
+       exit(1)
+
     exit(0)
 
 if __name__ == '__main__':
