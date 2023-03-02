@@ -1,6 +1,6 @@
 # Veracode Generate SBOM
 
-A simple example script generate a CycloneDX SBOM for an app in a json file.
+A simple script to generate a CycloneDX or SPDX SBOM for an app in a json file.
 
 ## Setup
 
@@ -42,6 +42,6 @@ export VERACODE_API_KEY_SECRET=<YOUR_API_KEY_SECRET>
 python generate_sbom.py -a <your app name>
 ```
 
-Both of these methods will generate a CycloneDX SBOM in a file called "your app name"_sbom.json
+Both of these methods will generate the SBOM in a file called "your app name"_sbom.json
 
 If the app is not found an error message will be printed.
