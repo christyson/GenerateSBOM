@@ -33,7 +33,6 @@ def main():
             return
         else:
             linked = True if (linked_str.lower()=="true") else False
-
     data = vapi().get_app_by_name(args.app)
     found = False
     for app in data:
@@ -44,6 +43,10 @@ def main():
            app_guid = app.get("guid")
            sbom = vapi().get_sbom(app_guid, type, linked)
            app_name=args.app+"_sbom.json"
+           if ("/" in app_name): 
+               print ("Note: /'s in the app name will be replaced with _'s")
+               app_name = app_name.replace("/","_")
+           print("file name for app is "+app_name)
            print("SBOM for App: "+args.app +" is saved to "+app_name)
            with open(app_name, 'w') as f:
               print(json.dumps(sbom), file=f)
